@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "@assets/*": ["assets/*"],
-      "@components/*": ["components/*"],
-      "@constants/*": ["constants/*"],
-      "@pages/*": ["pages/*"],
-      "@store/*": ["store/*"],
-      "@styles/*": ["styles/*"],
-      "@utils/*": ["utils/*"]
+      "assets": ["src/assets/"],
+      "components": ["src/components/"],
+      "constants": ["src/constants/"],
+      "pages": ["src/pages/"],
+      "store": ["src/store/"],
+      "styles": ["src/styles/"],
+      "utils": ["src/utils/"]
     },
     "allowJs": true,
     "target": "es2021",

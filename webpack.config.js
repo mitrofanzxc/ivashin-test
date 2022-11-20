@@ -3,7 +3,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
-const tsconfigAlias = require('./tsconfig-alias');
 
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development';
@@ -21,11 +20,16 @@ module.exports = {
   },
   entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index.tsx')],
   resolve: {
+    alias: {
+      assets: path.resolve(__dirname, 'src/assets/'),
+      components: path.resolve(__dirname, 'src/components/'),
+      constants: path.resolve(__dirname, 'src/constants/'),
+      pages: path.resolve(__dirname, 'src/pages/'),
+      store: path.resolve(__dirname, 'src/store/'),
+      styles: path.resolve(__dirname, 'src/styles/'),
+      utils: path.resolve(__dirname, 'src/utils/'),
+    },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
-     alias: tsconfigAlias({
-	    tsconfigPath: '../tsconfig.json', // Using custom path
-	    webpackConfigBasePath: '../', // Using custom path
-    }),
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
