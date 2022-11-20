@@ -5,4 +5,3 @@ coverage
 **/.svn
 **/.hg
 **/node_modules
-webpack.config.js

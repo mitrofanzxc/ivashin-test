@@ -1,0 +1,27 @@
+@import '../../styles/constants.scss';
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $base * 10;
+  height: $base * 10;
+  border-radius: $base;
+  background-color: $color-white;
+  transition: all $transition-01 ease-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: translate(0.063rem, 0.063rem);
+  }
+
+  &:active {
+    transform: translate(0.125rem, 0.125rem);
+  }
+}
+
+.button__icon {
+  display: block;
+  width: $base * 9;
+  height: $base * 9;
+}

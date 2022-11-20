@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { PATHS } from '../../constants';
-import Logo from '../../assets/images/logo.svg';
+import Logo from '../../assets/logo.svg';
 import './styles.scss';
 
 const Header: FC = () => {

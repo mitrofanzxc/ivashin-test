@@ -9,6 +9,11 @@ body {
   scroll-behavior: smooth;
 }
 
+h2 {
+  font-size: $fs-xl;
+  font-weight: $fw-bold;
+}
+
 .wrapper {
   max-width: 98%;
   margin-right: auto;
@@ -19,6 +24,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: $base * 2;
+
+  @media (max-width: $breakpoint-md-min) {
+    grid-template-columns: 1.5fr 3fr;
+  }
 }
 
 .box-shadow {
