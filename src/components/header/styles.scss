@@ -1,0 +1,14 @@
+@import '../../styles/constants.scss';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $base * 2;
+  margin-bottom: $base * 2;
+}
+
+.logo {
+  width: auto;
+  height: $base * 10;
+}

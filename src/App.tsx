@@ -1,14 +1,18 @@
 import { FC } from 'react';
-import Filter from 'components/filter/filter.component';
+import { Route, Routes } from 'react-router-dom';
+import { Layout, Main, NotFound } from 'pages';
+import { PATHS } from './constants';
 
 const App: FC = () => {
+  const { main, any } = PATHS;
+
   return (
-    <>
-      <header>Header</header>
-      <main>
-        <Filter />
-      </main>
-    </>
+    <Routes>
+      <Route path={main} element={<Layout />}>
+        <Route index element={<Main />} />
+        <Route path={any} element={<NotFound />} />
+      </Route>
+    </Routes>
   );
 };
 

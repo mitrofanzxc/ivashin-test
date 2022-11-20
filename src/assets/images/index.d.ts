@@ -13,7 +13,22 @@ declare module '*.png' {
   export default path;
 }
 
-declare module '*.webp';
-declare module '*.gif';
-declare module '*.svg';
-declare module '*.ico';
+declare module '*.webp' {
+  const path: string;
+  export default path;
+}
+
+declare module '*.gif' {
+  const path: string;
+  export default path;
+}
+
+declare module '*.svg' {
+  const path: string;
+  export default path;
+}
+
+declare module '*.ico' {
+  const path: string;
+  export default path;
+}
