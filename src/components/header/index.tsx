@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { PATHS } from '../../constants';
-import Logo from '../../assets/logo.svg';
+import Sprite from '../../assets/sprite.svg';
 import './styles.scss';
 
 const Header: FC = () => {
@@ -9,8 +9,10 @@ const Header: FC = () => {
 
   return (
     <header className="wrapper box-shadow header">
-      <Link to={main} className="logo">
-        <img className="logo" src={Logo} alt="Logo" />
+      <Link to={main} className="button box-shadow">
+        <svg className="button__icon">
+          <use xlinkHref={`${Sprite}#logo`} />
+        </svg>
       </Link>
       <nav>
         <ul>

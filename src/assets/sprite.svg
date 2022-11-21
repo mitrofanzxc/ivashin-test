@@ -18,6 +18,10 @@
     <path d="M176 224h24a8 8 0 0 0 8-8V88l-56-56H56a8 8 0 0 0-8 8v88" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
     <path d="M65.7 168H60a28 28 0 0 0 0 56h48a44 44 0 1 0-44-44" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="plus">
+    <path fill="none" d="M0 0h256v256H0z"></path>
+    <path fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M40 128h176M128 40v176"></path>
+  </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="save">
     <path fill="none" d="M0 0h256v256H0z"></path>
     <path fill="none" stroke="#00ff77" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m172 104-58.7 56L84 132"></path>

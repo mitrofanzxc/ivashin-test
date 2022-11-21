@@ -5,7 +5,9 @@
   align-items: center;
   justify-content: center;
   width: $base * 10;
+  min-width: $base * 10;
   height: $base * 10;
+  min-height: $base * 10;
   border-radius: $base;
   background-color: $color-white;
   transition: all $transition-01 ease-out;
@@ -24,4 +26,9 @@
   display: block;
   width: $base * 9;
   height: $base * 9;
+  transition: all $transition-01 ease-out;
+}
+
+.button__icon_active {
+  transform: rotate(45deg);
 }
