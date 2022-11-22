@@ -1,12 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-export interface IFilterState {
+interface IData {
+  id: string;
+  value: string;
+}
+
+interface IFilterState {
   isOpen: boolean;
+  data: IData[];
 }
 
 const initialState: IFilterState = {
   isOpen: false,
+  data: [],
 };
 
 export const filterSlice = createSlice({
@@ -19,8 +26,11 @@ export const filterSlice = createSlice({
     toggleFilterInput: (state) => {
       state.isOpen = !state.isOpen;
     },
+    addTag: (state, action: PayloadAction<IData>) => {
+      state.data.push(action.payload);
+    },
   },
 });
 
-export const { closeFilterInput, toggleFilterInput } = filterSlice.actions;
+export const { closeFilterInput, toggleFilterInput, addTag } = filterSlice.actions;
 export default filterSlice.reducer;
