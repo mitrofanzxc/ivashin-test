@@ -8,7 +8,7 @@ const Header: FC = () => {
   const { main } = PATHS;
 
   return (
-    <header className="wrapper box-shadow header">
+    <header className="wrapper box-shadow header mb-2 pa-2">
       <Link to={main} className="button box-shadow">
         <svg className="button__icon">
           <use xlinkHref={`${Sprite}#logo`} />

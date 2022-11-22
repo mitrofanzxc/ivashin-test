@@ -15,14 +15,14 @@ const Filter: FC = () => {
   };
 
   return (
-    <aside className="filter box-shadow">
-      <div className="filter__header">
+    <aside className="filter box-shadow pa-2">
+      <div className="filter__header mb-2 pb-2">
         <h2>Filter</h2>
         <Button icon="plus" isOpen={isOpen} onClick={() => dispatch(toggleFilterInput())} />
       </div>
       <div className={`input-wrapper ${isOpen ? 'input-wrapper_active' : ''}`}>
         <input
-          className="input box-shadow"
+          className="input box-shadow pl-2"
           type="text"
           name=""
           id=""
