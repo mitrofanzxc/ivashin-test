@@ -1,6 +1,6 @@
 import { FC } from 'react';
+import { IButton } from 'interfaces';
 import Sprite from '../../assets/sprite.svg';
-import { IButton } from './button.interface';
 import './styles.scss';
 
 const Button: FC<IButton> = ({ icon, isOpen, onClick }) => {

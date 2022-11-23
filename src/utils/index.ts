@@ -1,3 +1,4 @@
-import { getLocalStorage } from './getLocalStorage';
+import { getLocalStorageTags } from './getLocalStorage';
+import { useSetLocalStorageTags } from './useSetLocalStorageTags';
 
-export { getLocalStorage };
+export { getLocalStorageTags, useSetLocalStorageTags };

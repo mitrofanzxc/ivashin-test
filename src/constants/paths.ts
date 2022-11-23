@@ -1,7 +1,4 @@
-export interface IPATHS {
-  main: string;
-  any: string;
-}
+import { IPATHS } from 'interfaces';
 
 export const PATHS: IPATHS = {
   main: '/',

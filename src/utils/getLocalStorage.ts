@@ -1,4 +1,6 @@
-const getLocalStorage = (value: string): any => {
+import { ITag } from 'interfaces';
+
+const getLocalStorageTags = (value: string): ITag[] | null => {
   const data: string | null = localStorage.getItem(value) || null;
 
   if (data) {
@@ -8,4 +10,4 @@ const getLocalStorage = (value: string): any => {
   return null;
 };
 
-export { getLocalStorage };
+export { getLocalStorageTags };

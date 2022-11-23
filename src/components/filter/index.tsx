@@ -1,11 +1,11 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { FC, useState, ChangeEvent } from 'react';
 import { useAppSelector, useAppDispatch, toggleFilterInput, closeFilterInput, addTag } from 'store';
-import { Button } from 'components';
+import { Button, TagList } from 'components';
 import { v4 as uuidv4 } from 'uuid';
 import './style.scss';
 
 const Filter: FC = () => {
-  const { isOpen, data } = useAppSelector(({ filter }) => filter);
+  const { isOpen } = useAppSelector(({ filter }) => filter);
   const dispatch = useAppDispatch();
   const [inputValue, setInputValue] = useState<string>('');
 
@@ -39,24 +39,7 @@ const Filter: FC = () => {
         />
         <Button icon="save" onClick={handleAddTag} />
       </div>
-      <ul className="tag-list">
-        {/* <li className="tag-list__item box-shadow pa-1">tag11111</li>
-        <li className="tag-list__item box-shadow pa-1">tag2</li>
-        <li className="tag-list__item box-shadow pa-1">tag3</li>
-        <li className="tag-list__item box-shadow pa-1">tag4</li>
-        <li className="tag-list__item box-shadow pa-1">tag5</li>
-        <li className="tag-list__item box-shadow pa-1">tag6</li>
-        <li className="tag-list__item box-shadow pa-1">tag7</li>
-        <li className="tag-list__item box-shadow pa-1">tag8</li>
-        <li className="tag-list__item box-shadow pa-1">tag9</li> */}
-        {data.map(({ id, value }) => {
-          return (
-            <li key={id} className="tag-list__item box-shadow pa-1">
-              {value}
-            </li>
-          );
-        })}
-      </ul>
+      <TagList />
     </aside>
   );
 };
