@@ -23,11 +23,11 @@ const Filter: FC = () => {
 
   return (
     <aside className="filter box-shadow pa-2">
-      <div className="filter__header mb-2 pb-2">
+      <div className="filter__header mb-5 pb-2">
         <h2>Tags</h2>
         <Button icon="plus" isOpen={isOpen} onClick={() => dispatch(toggleFilterInput())} />
       </div>
-      <div className={`input-wrapper mb-2 ${isOpen ? 'input-wrapper_active' : ''}`}>
+      <div className={`input-wrapper mb-5 ${isOpen ? 'input-wrapper_active' : ''}`}>
         <input
           className="input box-shadow pl-2"
           type="text"

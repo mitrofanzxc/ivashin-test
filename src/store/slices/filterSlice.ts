@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { getLocalStorageTags } from 'utils';
-import { ITag, IFilterState } from './filterSlice.interface';
+import { ITag, IFilterState } from 'interfaces';
 
 const initialState: IFilterState = {
   isOpen: false,
@@ -19,13 +19,23 @@ export const filterSlice = createSlice({
       state.isOpen = !state.isOpen;
     },
     addTag: (state, action: PayloadAction<ITag>) => {
-      state.tags.push(action.payload);
+      if (state.tags) {
+        state.tags.push(action.payload);
+      }
+    },
+    removeTag: (state, action: PayloadAction<string>) => {
+      if (state.tags) {
+        state.tags = state.tags.filter(({ id }) => id !== action.payload);
+      }
     },
     filterByTag: (state, action: PayloadAction<string>) => {
-      state.tags = state.tags.filter(({ id }) => id !== action.payload);
+      if (state.tags) {
+        state.tags = state.tags.filter(({ id }) => id !== action.payload);
+      }
     },
   },
 });
 
-export const { closeFilterInput, toggleFilterInput, addTag, filterByTag } = filterSlice.actions;
+export const { closeFilterInput, toggleFilterInput, addTag, removeTag, filterByTag } =
+  filterSlice.actions;
 export default filterSlice.reducer;

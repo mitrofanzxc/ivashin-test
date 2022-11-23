@@ -1,1 +1,36 @@
 @import '../../styles/constants.scss';
+
+.tag-list__item {
+  position: relative;
+  transition: background-color $transition-01 ease-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-grey-05;
+
+    .button {
+      display: flex;
+    }
+  }
+
+  &:active {
+    background-color: $color-grey-05;
+  }
+
+  .button {
+    position: absolute;
+    top: -$base * 2;
+    right: -$base * 2;
+    display: none;
+    width: $base * 4;
+    min-width: $base * 4;
+    height: $base * 4;
+    min-height: $base * 4;
+    border-radius: 50%;
+  }
+
+  .button__icon {
+    width: $base * 3;
+    height: $base * 3;
+  }
+}

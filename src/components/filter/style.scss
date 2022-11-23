@@ -21,22 +21,3 @@
 .input-wrapper_active {
   display: flex;
 }
-
-.tag-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: $base * 2;
-}
-
-.tag-list__item {
-  transition: background-color $transition-01 ease-out;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $color-grey-05;
-  }
-
-  &:active {
-    background-color: $color-grey-05;
-  }
-}

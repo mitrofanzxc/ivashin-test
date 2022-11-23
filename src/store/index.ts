@@ -1,6 +1,12 @@
 import { store } from './store';
 import { useAppSelector, useAppDispatch } from './hooks';
-import { closeFilterInput, toggleFilterInput, addTag, filterByTag } from './slices/filterSlice';
+import {
+  closeFilterInput,
+  toggleFilterInput,
+  addTag,
+  removeTag,
+  filterByTag,
+} from './slices/filterSlice';
 
 export {
   store,
@@ -9,5 +15,6 @@ export {
   closeFilterInput,
   toggleFilterInput,
   addTag,
+  removeTag,
   filterByTag,
 };
