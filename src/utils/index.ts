@@ -1,4 +1,11 @@
-import { getLocalStorageTags } from './getLocalStorage';
+import { getLocalStorageTags } from './getLocalStorageTags';
+import { getLocalStorageNotes } from './getLocalStorageNotes';
 import { useSetLocalStorageTags } from './useSetLocalStorageTags';
+import { useSetLocalStorageNotes } from './useSetLocalStorageNotes';
 
-export { getLocalStorageTags, useSetLocalStorageTags };
+export {
+  getLocalStorageTags,
+  getLocalStorageNotes,
+  useSetLocalStorageTags,
+  useSetLocalStorageNotes,
+};

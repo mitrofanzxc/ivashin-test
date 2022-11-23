@@ -1,19 +1,13 @@
 import { store } from './store';
 import { useAppSelector, useAppDispatch } from './hooks';
-import {
-  closeFilterInput,
-  toggleFilterInput,
-  addTag,
-  removeTag,
-  filterByTag,
-} from './slices/filterSlice';
+import { closeTagInput, toggleTagInput, addTag, removeTag, filterByTag } from './slices/tagsSlice';
 
 export {
   store,
   useAppSelector,
   useAppDispatch,
-  closeFilterInput,
-  toggleFilterInput,
+  closeTagInput,
+  toggleTagInput,
   addTag,
   removeTag,
   filterByTag,

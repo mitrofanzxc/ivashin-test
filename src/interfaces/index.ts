@@ -5,7 +5,7 @@ export interface IPATHS {
 
 export interface IButton {
   icon: string;
-  isOpen?: boolean;
+  isInputOpen?: boolean;
   onClick?: () => void;
 }
 
@@ -14,7 +14,16 @@ export interface ITag {
   value: string;
 }
 
-export interface IFilterState {
-  isOpen: boolean;
-  tags: ITag[] | null;
+export interface ITagsState {
+  isInputOpen: boolean;
+  data: ITag[] | null;
+}
+
+export interface INote {
+  id: string;
+  value: string;
+}
+
+export interface INotesState {
+  data: INote[];
 }

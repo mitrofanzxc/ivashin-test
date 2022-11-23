@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import { useAppSelector } from 'store';
 
 const useSetLocalStorageTags = () => {
-  const { tags } = useAppSelector(({ filter }) => filter);
+  const { data } = useAppSelector(({ tags }) => tags);
 
   useEffect(() => {
-    localStorage.setItem('tags', JSON.stringify(tags));
-  }, [tags]);
+    localStorage.setItem('tags', JSON.stringify(data));
+  }, [data]);
 };
 
 export { useSetLocalStorageTags };
