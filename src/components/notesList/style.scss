@@ -1,0 +1,8 @@
+@import '../../styles/constants.scss';
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: $base * 4;
+  width: 100%;
+}

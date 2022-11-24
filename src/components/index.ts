@@ -4,5 +4,6 @@ import { Notes } from './notes';
 import { Button } from './button';
 import { Tag } from './tag';
 import { TagList } from './tagList';
+import { NotesList } from './notesList';
 
-export { Filter, Header, Notes, Button, Tag, TagList };
+export { Filter, Header, Notes, Button, Tag, TagList, NotesList };
