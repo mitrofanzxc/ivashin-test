@@ -1,0 +1,9 @@
+@import '../../styles/constants.scss';
+
+.textarea {
+  width: 100%;
+  height: calc(100vh - ($base * 4));
+  font-size: $fs-l;
+  border: none;
+  resize: none;
+}

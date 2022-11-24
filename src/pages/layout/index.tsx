@@ -5,7 +5,7 @@ import { Header } from 'components';
 const Layout: FC = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Outlet />
     </>
   );

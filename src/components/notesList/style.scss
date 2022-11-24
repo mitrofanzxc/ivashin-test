@@ -6,3 +6,9 @@
   row-gap: $base * 4;
   width: 100%;
 }
+
+.notes-list__item {
+  display: flex;
+  flex-direction: column;
+  row-gap: $base;
+}

@@ -4,6 +4,10 @@
     <path fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M128 160H96v-32l96-96 32 32-96 96zM168 56l32 32"></path>
     <path d="M216 120v88a8 8 0 0 1-8 8H48a8 8 0 0 1-8-8V48a8 8 0 0 1 8-8h88" fill="none" stroke="#121212" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
   </symbol>
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="back">
+    <path fill="none" d="M0 0h256v256H0z"></path>
+    <path fill="none" stroke="#181818" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="m160 208-80-80 80-80"></path>
+  </symbol>
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" id="delete">
     <path fill="none" d="M0 0h256v256H0z"></path>
     <path fill="none" stroke="#d61313" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" d="M216 56H40M104 104v64M152 104v64M200 56v152a8 8 0 0 1-8 8H64a8 8 0 0 1-8-8V56M168 56V40a16 16 0 0 0-16-16h-48a16 16 0 0 0-16 16v16"></path>

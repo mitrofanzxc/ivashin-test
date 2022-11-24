@@ -1,5 +1,6 @@
 export interface IPATHS {
   main: string;
+  note: string;
   any: string;
 }
 
@@ -21,6 +22,7 @@ export interface ITagsState {
 
 export interface INote {
   id: string;
+  time: string;
   value: string;
 }
 
