@@ -1,0 +1,8 @@
+@import '../../styles/constants.scss';
+
+.note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: $base * 2;
+}

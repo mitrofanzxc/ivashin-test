@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { useAppDispatch, removeTag } from 'store';
+import { useAppDispatch, removeTagFromFilter } from 'store';
 import { ITag } from 'interfaces';
 import Sprite from '../../assets/sprite.svg';
 import './style.scss';
@@ -8,7 +8,7 @@ const Tag: FC<ITag> = ({ id, value }) => {
   const dispatch = useAppDispatch();
 
   const handleRemoveTag = () => {
-    dispatch(removeTag(id));
+    dispatch(removeTagFromFilter(id));
   };
 
   return (

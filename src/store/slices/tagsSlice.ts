@@ -18,12 +18,12 @@ export const tagsSlice = createSlice({
     toggleTagInput: (state) => {
       state.isInputOpen = !state.isInputOpen;
     },
-    addTag: (state, action: PayloadAction<ITag>) => {
+    addTagToFilter: (state, action: PayloadAction<ITag>) => {
       if (state.data) {
         state.data.push(action.payload);
       }
     },
-    removeTag: (state, action: PayloadAction<string>) => {
+    removeTagFromFilter: (state, action: PayloadAction<string>) => {
       if (state.data) {
         state.data = state.data.filter(({ id }) => id !== action.payload);
       }
@@ -36,5 +36,6 @@ export const tagsSlice = createSlice({
   },
 });
 
-export const { closeTagInput, toggleTagInput, addTag, removeTag, filterByTag } = tagsSlice.actions;
+export const { closeTagInput, toggleTagInput, addTagToFilter, removeTagFromFilter, filterByTag } =
+  tagsSlice.actions;
 export default tagsSlice.reducer;

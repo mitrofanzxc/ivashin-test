@@ -1,5 +1,11 @@
 import { FC, useState, ChangeEvent } from 'react';
-import { useAppSelector, useAppDispatch, toggleTagInput, closeTagInput, addTag } from 'store';
+import {
+  useAppSelector,
+  useAppDispatch,
+  toggleTagInput,
+  closeTagInput,
+  addTagToFilter,
+} from 'store';
 import { Button, TagList } from 'components';
 import { v4 as uuidv4 } from 'uuid';
 import './style.scss';
@@ -18,7 +24,7 @@ const Filter: FC = () => {
 
   const handleAddTag = () => {
     if (inputValue) {
-      dispatch(addTag({ id: uuidv4(), value: inputValue }));
+      dispatch(addTagToFilter({ id: uuidv4(), value: inputValue }));
       dispatch(closeTagInput());
       setInputValue('');
     }

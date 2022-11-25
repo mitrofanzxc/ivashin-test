@@ -23,9 +23,14 @@ export interface ITagsState {
 export interface INote {
   id: string;
   time: string;
+  tags: string[];
   value: string;
 }
 
 export interface INotesState {
   data: INote[];
+}
+
+export interface ITextarea {
+  note: INote | undefined;
 }

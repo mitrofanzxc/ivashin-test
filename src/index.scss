@@ -2,32 +2,14 @@
 @import './styles/normalize.scss';
 @import './styles/reset.scss';
 @import './styles/indents.scss';
+@import './styles/headers.scss';
+@import './styles/flex.scss';
 
 body {
   @include roboto;
   background-color: $color-white;
   color: $color-dark;
   scroll-behavior: smooth;
-}
-
-h1 {
-  font-size: $fs-xxxl;
-  font-weight: $fw-bold;
-}
-
-h2 {
-  font-size: $fs-xxl;
-  font-weight: $fw-bold;
-}
-
-h3 {
-  font-size: $fs-xl;
-  font-weight: $fw-medium;
-}
-
-h4 {
-  font-size: $fs-l;
-  color: $color-dark-04;
 }
 
 .wrapper {
