@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAppSelector } from 'store';
-import { useSetLocalStorageNotes } from 'utils';
+import { useSetLocalStorageNotes, convertDate } from 'utils';
 import { Textarea } from 'components';
 import { PATHS } from '../../constants';
 import Sprite from '../../assets/sprite.svg';
@@ -26,27 +26,16 @@ const NotePage: FC = () => {
             <use xlinkHref={`${Sprite}#back`} />
           </svg>
         </Link>
-        <h4 className="h4">
-          {note && note.time && new Intl.DateTimeFormat('en-US').format(new Date(note.time))}
-        </h4>
+        <h4 className="h4">{note && note.time && convertDate(note.time)}</h4>
       </div>
-      <ul className="tag-list jc-end mb-2">
+      <Textarea note={note} />
+      <ul className="tag-list mr-1">
         {note &&
           note.tags &&
           note.tags.map((tag) => {
-            return (
-              <li className="tag-list__item box-shadow pa-1">
-                {tag}
-                <div className="button box-shadow">
-                  <svg className="button__icon">
-                    <use xlinkHref={`${Sprite}#delete`} />
-                  </svg>
-                </div>
-              </li>
-            );
+            return <li className="tag-list__item box-shadow pa-1">{tag}</li>;
           })}
       </ul>
-      <Textarea note={note} />
     </div>
   );
 };

@@ -1,5 +1,6 @@
-import { FC, useEffect, useRef, ChangeEvent } from 'react';
+import { FC, useRef, ChangeEvent } from 'react';
 import { useAppDispatch, addValueToNote, addTagToNote } from 'store';
+import { useFocus } from 'utils';
 import { ITextarea } from 'interfaces';
 import './style.scss';
 
@@ -28,17 +29,11 @@ const Textarea: FC<ITextarea> = ({ note }) => {
     }
   };
 
-  useEffect(() => {
-    if (textarea.current) {
-      const maxRange = textarea.current.value.length;
-      textarea.current.setSelectionRange(maxRange, maxRange);
-      textarea.current.focus();
-    }
-  }, []);
+  useFocus(textarea);
 
   return (
     <textarea
-      className="textarea box-shadow pa-4"
+      className="textarea box-shadow mb-2 pa-4"
       placeholder="Type something..."
       autoComplete="off"
       value={note ? note.value : ''}
