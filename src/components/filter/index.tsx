@@ -24,7 +24,7 @@ const Filter: FC = () => {
 
   const handleAddTag = () => {
     if (inputValue) {
-      dispatch(addTagToFilter({ id: uuidv4(), value: inputValue }));
+      dispatch(addTagToFilter({ id: uuidv4(), value: `#${inputValue}` }));
       dispatch(closeTagInput());
       setInputValue('');
     }

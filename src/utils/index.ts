@@ -1,13 +1,11 @@
-import { getLocalStorageTags } from './getLocalStorageTags';
-import { getLocalStorageNotes } from './getLocalStorageNotes';
+import { getLocalStorageKey } from './getLocalStorageKey';
 import { useSetLocalStorageTags } from './useSetLocalStorageTags';
 import { useSetLocalStorageNotes } from './useSetLocalStorageNotes';
 import { convertDate } from './convertDate';
 import { useFocus } from './useFocus';
 
 export {
-  getLocalStorageTags,
-  getLocalStorageNotes,
+  getLocalStorageKey,
   useSetLocalStorageTags,
   useSetLocalStorageNotes,
   convertDate,

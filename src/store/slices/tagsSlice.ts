@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { getLocalStorageTags } from 'utils';
+import { getLocalStorageKey } from 'utils';
 import { ITag, ITagsState } from 'interfaces';
 
 const initialState: ITagsState = {
   isInputOpen: false,
-  data: getLocalStorageTags() || [],
+  data: getLocalStorageKey('tags') || [],
 };
 
 export const tagsSlice = createSlice({
@@ -20,7 +20,11 @@ export const tagsSlice = createSlice({
     },
     addTagToFilter: (state, action: PayloadAction<ITag>) => {
       if (state.data) {
-        state.data.push(action.payload);
+        const note = state.data.find(({ value }) => value === action.payload.value);
+
+        if (!note) {
+          state.data.push(action.payload);
+        }
       }
     },
     removeTagFromFilter: (state, action: PayloadAction<string>) => {

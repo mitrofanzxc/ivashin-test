@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { getLocalStorageNotes } from 'utils';
+import { getLocalStorageKey } from 'utils';
 import { INote, INotesState } from 'interfaces';
 
 const initialState: INotesState = {
-  data: getLocalStorageNotes() || [],
+  data: getLocalStorageKey('notes') || [],
 };
 
 export const notesSlice = createSlice({
