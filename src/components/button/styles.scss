@@ -20,6 +20,13 @@
   &:active {
     transform: translate(0.125rem, 0.125rem);
   }
+
+  @media (max-width: $breakpoint-md-min) {
+    width: $base * 8;
+    min-width: $base * 8;
+    height: $base * 8;
+    min-height: $base * 8;
+  }
 }
 
 .button__icon {
@@ -27,6 +34,13 @@
   width: $base * 9;
   height: $base * 9;
   transition: all $transition-01 ease-out;
+
+  @media (max-width: $breakpoint-md-min) {
+    width: $base * 7;
+    min-width: $base * 7;
+    height: $base * 7;
+    min-height: $base * 7;
+  }
 }
 
 .button__icon_active {

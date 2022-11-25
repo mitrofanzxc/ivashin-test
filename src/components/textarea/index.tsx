@@ -1,4 +1,4 @@
-import { FC, ChangeEvent, useRef, useEffect } from 'react';
+import { FC, useEffect, useRef, ChangeEvent } from 'react';
 import { useAppDispatch, addValueToNote, addTagToNote } from 'store';
 import { ITextarea } from 'interfaces';
 import './style.scss';
@@ -41,7 +41,6 @@ const Textarea: FC<ITextarea> = ({ note }) => {
       className="textarea box-shadow pa-4"
       placeholder="Type something..."
       autoComplete="off"
-      // autoFocus={true}
       value={note ? note.value : ''}
       onChange={handleTextarea}
       ref={textarea}

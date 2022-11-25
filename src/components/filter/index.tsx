@@ -33,7 +33,7 @@ const Filter: FC = () => {
   return (
     <aside className="filter box-shadow pa-2">
       <div className="filter__header mb-5 pb-2">
-        <h2>Tags</h2>
+        <h2 className="h2">Tags</h2>
         <Button icon="plus" isInputOpen={isInputOpen} onClick={() => dispatch(toggleTagInput())} />
       </div>
       <div className={`input-wrapper mb-5 ${isInputOpen ? 'input-wrapper_active' : ''}`}>

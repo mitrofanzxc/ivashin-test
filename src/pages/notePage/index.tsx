@@ -9,8 +9,10 @@ import './style.scss';
 
 const NotePage: FC = () => {
   const { main } = PATHS;
+
   const location = useLocation();
   const noteId = location.pathname.slice(1);
+
   const { data } = useAppSelector(({ notes }) => notes);
   const note = data.find(({ id }) => id === noteId);
 
@@ -24,7 +26,9 @@ const NotePage: FC = () => {
             <use xlinkHref={`${Sprite}#back`} />
           </svg>
         </Link>
-        <h4>{note && note.time && new Intl.DateTimeFormat('en-US').format(new Date(note.time))}</h4>
+        <h4 className="h4">
+          {note && note.time && new Intl.DateTimeFormat('en-US').format(new Date(note.time))}
+        </h4>
       </div>
       <ul className="tag-list jc-end mb-2">
         {note &&

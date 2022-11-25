@@ -12,8 +12,8 @@ const NotesList: FC = () => {
         data.map(({ id, time, value }) => {
           return (
             <Link key={id} className="notes-list__item box-shadow pa-2" to={`/${id}`}>
-              <h3>{value}</h3>
-              <h4>{`${new Intl.DateTimeFormat('en-US').format(new Date(time))}`}</h4>
+              <h3 className="h3">{value}</h3>
+              <h4 className="h4">{`${new Intl.DateTimeFormat('en-US').format(new Date(time))}`}</h4>
             </Link>
           );
         })}

@@ -20,7 +20,7 @@ const Notes: FC = () => {
   return (
     <main className="main box-shadow pa-2">
       <div className="main__header mb-5 pb-2">
-        <h2>Notes</h2>
+        <h2 className="h2">Notes</h2>
         <Link
           to={`/${noteId}`}
           className="button box-shadow"

@@ -1,21 +1,37 @@
 @import './constants.scss';
 
-h1 {
+.h1 {
   font-size: $fs-xxxl;
   font-weight: $fw-bold;
+
+  @media (max-width: $breakpoint-md-min) {
+    font-size: $fs-xxl;
+  }
 }
 
-h2 {
+.h2 {
   font-size: $fs-xxl;
   font-weight: $fw-bold;
+
+  @media (max-width: $breakpoint-md-min) {
+    font-size: $fs-xl;
+  }
 }
 
-h3 {
+.h3 {
   font-size: $fs-xl;
   font-weight: $fw-medium;
+
+  @media (max-width: $breakpoint-md-min) {
+    font-size: $fs-l;
+  }
 }
 
-h4 {
+.h4 {
   font-size: $fs-l;
   color: $color-dark-04;
+
+  @media (max-width: $breakpoint-md-min) {
+    font-size: $fs-m;
+  }
 }
