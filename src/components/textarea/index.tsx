@@ -1,5 +1,5 @@
 import { FC, useRef, ChangeEvent } from 'react';
-import { useAppDispatch, addValueToNote, addTagToNote } from 'store';
+import { useAppDispatch, addValueToNote, addTagToNote, addTagToFilterFromNote } from 'store';
 import { useFocus } from 'utils';
 import { ITextarea } from 'interfaces';
 import './style.scss';
@@ -10,11 +10,12 @@ const Textarea: FC<ITextarea> = ({ note }) => {
 
   const validateTag = (value: string) => {
     const regex = /#\b[^#\s]*\b/gim;
-    const arr = value.match(regex);
+    const tags = value.match(regex);
 
-    if (arr) {
+    if (tags) {
       if (note) {
-        dispatch(addTagToNote({ id: note.id, tags: arr }));
+        dispatch(addTagToNote({ id: note.id, tags }));
+        dispatch(addTagToFilterFromNote(tags));
       }
     }
   };

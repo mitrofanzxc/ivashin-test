@@ -19,8 +19,8 @@ const TagList: FC = () => {
   return (
     <ul className="tag-list" onClick={handleFilter} aria-hidden="true">
       {data &&
-        data.map(({ id, value }) => {
-          return <Tag key={id} id={id} value={value} />;
+        data.map((value) => {
+          return <Tag value={value} />;
         })}
     </ul>
   );

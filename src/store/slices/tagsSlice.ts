@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { getLocalStorageKey } from 'utils';
-import { ITag, ITagsState } from 'interfaces';
+import { ITagsState } from 'interfaces';
 
 const initialState: ITagsState = {
   isInputOpen: false,
@@ -18,28 +18,39 @@ export const tagsSlice = createSlice({
     toggleTagInput: (state) => {
       state.isInputOpen = !state.isInputOpen;
     },
-    addTagToFilter: (state, action: PayloadAction<ITag>) => {
+    addTagToFilter: (state, action: PayloadAction<string>) => {
       if (state.data) {
-        const note = state.data.find(({ value }) => value === action.payload.value);
+        const note = state.data.includes(action.payload);
 
         if (!note) {
           state.data.push(action.payload);
         }
       }
     },
+    addTagToFilterFromNote: (state, action: PayloadAction<string[]>) => {
+      if (state.data) {
+        state.data = Array.from(new Set([...state.data, ...action.payload]));
+      }
+    },
     removeTagFromFilter: (state, action: PayloadAction<string>) => {
       if (state.data) {
-        state.data = state.data.filter(({ id }) => id !== action.payload);
+        state.data = state.data.filter((value) => value !== action.payload);
       }
     },
     filterByTag: (state, action: PayloadAction<string>) => {
       if (state.data) {
-        state.data = state.data.filter(({ id }) => id !== action.payload);
+        state.data = state.data.filter((value) => value !== action.payload);
       }
     },
   },
 });
 
-export const { closeTagInput, toggleTagInput, addTagToFilter, removeTagFromFilter, filterByTag } =
-  tagsSlice.actions;
+export const {
+  closeTagInput,
+  toggleTagInput,
+  addTagToFilter,
+  addTagToFilterFromNote,
+  removeTagFromFilter,
+  filterByTag,
+} = tagsSlice.actions;
 export default tagsSlice.reducer;

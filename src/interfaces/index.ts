@@ -11,13 +11,13 @@ export interface IButton {
 }
 
 export interface ITag {
-  id: string;
+  // id: string;
   value: string;
 }
 
 export interface ITagsState {
   isInputOpen: boolean;
-  data: ITag[] | null;
+  data: string[] | null;
 }
 
 export interface INote {

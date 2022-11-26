@@ -4,6 +4,7 @@ import {
   closeTagInput,
   toggleTagInput,
   addTagToFilter,
+  addTagToFilterFromNote,
   removeTagFromFilter,
   filterByTag,
 } from './slices/tagsSlice';
@@ -16,6 +17,7 @@ export {
   closeTagInput,
   toggleTagInput,
   addTagToFilter,
+  addTagToFilterFromNote,
   removeTagFromFilter,
   filterByTag,
   addNote,

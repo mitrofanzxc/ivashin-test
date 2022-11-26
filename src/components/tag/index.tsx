@@ -4,11 +4,11 @@ import { ITag } from 'interfaces';
 import Sprite from '../../assets/sprite.svg';
 import './style.scss';
 
-const Tag: FC<ITag> = ({ id, value }) => {
+const Tag: FC<ITag> = ({ value }) => {
   const dispatch = useAppDispatch();
 
   const handleRemoveTag = () => {
-    dispatch(removeTagFromFilter(id));
+    dispatch(removeTagFromFilter(value));
   };
 
   return (
