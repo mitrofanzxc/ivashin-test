@@ -29,7 +29,7 @@ export const tagsSlice = createSlice({
     },
     addTagToFilterFromNote: (state, action: PayloadAction<string[]>) => {
       if (state.data) {
-        state.data = Array.from(new Set([...state.data, ...action.payload]));
+        state.data = [...new Set([...state.data, ...action.payload])];
       }
     },
     removeTagFromFilter: (state, action: PayloadAction<string>) => {

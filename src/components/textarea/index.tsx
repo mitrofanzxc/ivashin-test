@@ -1,5 +1,5 @@
 import { FC, useRef, ChangeEvent } from 'react';
-import { useAppDispatch, addValueToNote, addTagToNote, addTagToFilterFromNote } from 'store';
+import { useAppDispatch, addValueToNote, addTagToNote } from 'store';
 import { useFocus } from 'hooks';
 import { ITextarea } from 'interfaces';
 import './style.scss';
@@ -15,7 +15,6 @@ const Textarea: FC<ITextarea> = ({ note }) => {
     if (tags) {
       if (note) {
         dispatch(addTagToNote({ id: note.id, tags }));
-        dispatch(addTagToFilterFromNote(tags));
       }
     }
   };
