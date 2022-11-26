@@ -1,7 +1,8 @@
 import { FC } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAppSelector } from 'store';
-import { useSetLocalStorageNotes, convertDate } from 'utils';
+import { useSetLocalStorage } from 'hooks';
+import { convertDate } from 'utils';
 import { Textarea } from 'components';
 import { PATHS } from '../../constants';
 import Sprite from '../../assets/sprite.svg';
@@ -16,7 +17,7 @@ const NotePage: FC = () => {
   const { data } = useAppSelector(({ notes }) => notes);
   const note = data.find(({ id }) => id === noteId);
 
-  useSetLocalStorageNotes();
+  useSetLocalStorage('notes');
 
   return (
     <div className="wrapper">

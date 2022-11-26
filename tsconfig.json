@@ -9,7 +9,8 @@
       "store": ["src/store/"],
       "styles": ["src/styles/"],
       "utils": ["src/utils/"],
-      "interfaces": ["src/interfaces/"]
+      "interfaces": ["src/interfaces/"],
+      "hooks": ["src/hooks/"]
     },
     "allowJs": true,
     "target": "es2021",

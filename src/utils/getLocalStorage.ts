@@ -1,4 +1,4 @@
-const getLocalStorageKey = <T>(key: string): T | null => {
+const getLocalStorage = <T>(key: string): T | null => {
   const data: string | null = localStorage.getItem(key) || null;
 
   if (data) {
@@ -9,4 +9,4 @@ const getLocalStorageKey = <T>(key: string): T | null => {
   return null;
 };
 
-export { getLocalStorageKey };
+export { getLocalStorage };

@@ -29,6 +29,7 @@ module.exports = {
       styles: path.resolve(__dirname, 'src/styles/'),
       utils: path.resolve(__dirname, 'src/utils/'),
       interfaces: path.resolve(__dirname, 'src/interfaces/'),
+      hooks: path.resolve(__dirname, 'src/hooks/'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },

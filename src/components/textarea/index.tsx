@@ -1,6 +1,6 @@
 import { FC, useRef, ChangeEvent } from 'react';
 import { useAppDispatch, addValueToNote, addTagToNote, addTagToFilterFromNote } from 'store';
-import { useFocus } from 'utils';
+import { useFocus } from 'hooks';
 import { ITextarea } from 'interfaces';
 import './style.scss';
 

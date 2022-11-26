@@ -1,7 +1,7 @@
 import { FC, MouseEvent } from 'react';
 import { useAppDispatch, useAppSelector, filterByTag } from 'store';
+import { useSetLocalStorage } from 'hooks';
 import { Tag } from 'components';
-import { useSetLocalStorageTags } from 'utils';
 import './style.scss';
 
 const TagList: FC = () => {
@@ -14,7 +14,7 @@ const TagList: FC = () => {
     dispatch(filterByTag(value));
   };
 
-  useSetLocalStorageTags();
+  useSetLocalStorage('tags');
 
   return (
     <ul className="tag-list" onClick={handleFilter} aria-hidden="true">

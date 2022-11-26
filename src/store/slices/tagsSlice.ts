@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { getLocalStorageKey } from 'utils';
+import { getLocalStorage } from 'utils';
 import { ITagsState } from 'interfaces';
 
 const initialState: ITagsState = {
   isInputOpen: false,
-  data: getLocalStorageKey('tags') || [],
+  data: getLocalStorage('tags') || [],
 };
 
 export const tagsSlice = createSlice({
