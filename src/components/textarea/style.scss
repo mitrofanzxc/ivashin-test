@@ -1,9 +1,47 @@
 @import '../../styles/constants.scss';
 
+.container,
+.backdrop,
 .textarea {
   width: 100%;
   height: calc(100vh - ($base * 35));
-  font-size: $fs-l;
   border: none;
+  border-radius: 0;
+}
+
+.container {
+  display: block;
+  transform: translateZ(0);
+  -webkit-text-size-adjust: none;
+}
+
+.backdrop {
+  position: absolute;
+  z-index: 1;
+  background-color: $color-white;
+  overflow: auto;
+  pointer-events: none;
+}
+
+.highlights {
+  font-size: $fs-l;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  color: transparent;
+}
+
+.textarea {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  font-size: $fs-l;
+  background-color: transparent;
+  overflow: auto;
   resize: none;
+}
+
+mark {
+  border-radius: 0;
+  color: transparent;
+  background-color: $color-blue-04;
 }
