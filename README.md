@@ -1,3 +1,5 @@
+# Deploy: [Link](https://mitrofanzxc-ivashin-test.netlify.app/) 
+
 ### `yarn` 
 
 Install all dependencies. 
@@ -16,5 +18,7 @@ Run the app in the development mode.
 - [x] Данные хранить в json формате; 
 - [x] Использование CSS препроцессора; 
 - [x] Использование TypeScript; 
+- [x] Во время редактирования заметки пользователь может создавать теги, используя символ #; 
+- [x] При редактировании заметки все слова, соответствующие тегам, должны подсвечиваться; 
 - [x] Залить на гит; 
-- [x] Залить на netlify
+- [x] Залить на netlify 
