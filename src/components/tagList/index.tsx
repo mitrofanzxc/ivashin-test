@@ -9,7 +9,6 @@ import {
 import { useSetLocalStorage } from 'hooks';
 import { filterData } from 'utils';
 import { Tag } from 'components';
-import { v4 as uuidv4 } from 'uuid';
 import './style.scss';
 
 const TagList: FC = () => {
@@ -22,13 +21,18 @@ const TagList: FC = () => {
     const target = event.target as HTMLInputElement;
     const { checked, value } = target;
 
-    if (checked) {
-      dispatch(removeTagFromFilterTagArray(value));
-    } else if (!checked) {
-      dispatch(addTagToFilterTagArray(value));
-    }
+    if (target.type === 'checkbox') {
+      if (!checked) {
+        dispatch(removeTagFromFilterTagArray(value));
+      } else if (checked) {
+        dispatch(addTagToFilterTagArray(value));
+      }
 
-    dispatch(filterNotes(filterData(filterTagArray, notesData)));
+      const asd = filterData(filterTagArray, notesData);
+      console.log(asd);
+
+      // dispatch(filterNotes(filterData(filterTagArray, notesData)));
+    }
   };
 
   useSetLocalStorage('tags');
@@ -37,8 +41,14 @@ const TagList: FC = () => {
   return (
     <ul className="tag-list" onClick={handleFilter} aria-hidden="true">
       {tagsData &&
-        tagsData.map((value) => {
-          return <Tag key={uuidv4()} value={value} />;
+        tagsData.map((value, index) => {
+          return (
+            <Tag
+              key={`checkbox-${value}-${index}`}
+              id={`checkbox-${value}-${index}`}
+              value={value}
+            />
+          );
         })}
     </ul>
   );

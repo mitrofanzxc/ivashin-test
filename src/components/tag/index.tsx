@@ -4,7 +4,7 @@ import { ITag } from 'interfaces';
 import Sprite from '../../assets/sprite.svg';
 import './style.scss';
 
-const Tag: FC<ITag> = ({ value }) => {
+const Tag: FC<ITag> = ({ id, value }) => {
   const dispatch = useAppDispatch();
 
   const handleRemoveTag = () => {
@@ -12,9 +12,9 @@ const Tag: FC<ITag> = ({ value }) => {
   };
 
   return (
-    <label className="tag-list__item box-shadow pa-1">
+    <label className="tag-list__item box-shadow pa-1" htmlFor={id}>
       {value}
-      <input className="input-checkbox" type="checkbox" value={value} />
+      <input className="input-checkbox" type="checkbox" id={id} value={value} />
       <button className="button box-shadow" type="button" onClick={handleRemoveTag}>
         <svg className="button__icon">
           <use xlinkHref={`${Sprite}#delete`} />

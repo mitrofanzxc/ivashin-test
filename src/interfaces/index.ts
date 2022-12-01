@@ -11,6 +11,7 @@ export interface IButton {
 }
 
 export interface ITag {
+  id: string;
   value: string;
 }
 
