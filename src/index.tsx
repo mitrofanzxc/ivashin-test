@@ -10,11 +10,11 @@ const container = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(container);
 
 root.render(
-  <StrictMode>
-    <HashRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </HashRouter>
-  </StrictMode>
+  // <StrictMode>
+  <HashRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </HashRouter>
+  // </StrictMode>
 );

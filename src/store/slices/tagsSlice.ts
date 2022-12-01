@@ -6,6 +6,7 @@ import { ITagsState } from 'interfaces';
 const initialState: ITagsState = {
   isInputOpen: false,
   data: getLocalStorage('tags') || [],
+  tagArray: [],
 };
 
 export const tagsSlice = createSlice({

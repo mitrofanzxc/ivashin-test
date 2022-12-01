@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAppSelector, useAppDispatch, addTagToFilterFromNote } from 'store';
 import { useSetLocalStorage } from 'hooks';
 import { convertDate } from 'utils';
+import { v4 as uuidv4 } from 'uuid';
 import { Textarea } from 'components';
 import { PATHS } from '../../constants';
 import Sprite from '../../assets/sprite.svg';
@@ -46,7 +47,11 @@ const NotePage: FC = () => {
         {note &&
           note.tags &&
           note.tags.map((tag) => {
-            return <li className="tag-list__item box-shadow pa-1">{tag}</li>;
+            return (
+              <li key={uuidv4()} className="tag-list__item box-shadow pa-1">
+                {tag}
+              </li>
+            );
           })}
       </ul>
     </div>

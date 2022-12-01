@@ -18,6 +18,7 @@ export interface ITag {
 export interface ITagsState {
   isInputOpen: boolean;
   data: string[] | null;
+  tagArray: string[] | null;
 }
 
 export interface INote {

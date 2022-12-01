@@ -8,7 +8,7 @@ import {
   removeTagFromFilter,
   filterByTag,
 } from './slices/tagsSlice';
-import { addNote, addValueToNote, addTagToNote } from './slices/notesSlice';
+import { addNote, removeNote, addValueToNote, addTagToNote } from './slices/notesSlice';
 
 export {
   store,
@@ -21,6 +21,7 @@ export {
   removeTagFromFilter,
   filterByTag,
   addNote,
+  removeNote,
   addValueToNote,
   addTagToNote,
 };

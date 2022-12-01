@@ -44,6 +44,7 @@ const Textarea: FC<ITextarea> = ({ note }) => {
     if (textarea.current) {
       handleApplyHighlights(textarea.current.value);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useFocus(textarea);

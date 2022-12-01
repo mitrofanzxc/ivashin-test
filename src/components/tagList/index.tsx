@@ -2,6 +2,7 @@ import { FC, MouseEvent } from 'react';
 import { useAppDispatch, useAppSelector, filterByTag } from 'store';
 import { useSetLocalStorage } from 'hooks';
 import { Tag } from 'components';
+import { v4 as uuidv4 } from 'uuid';
 import './style.scss';
 
 const TagList: FC = () => {
@@ -20,7 +21,7 @@ const TagList: FC = () => {
     <ul className="tag-list" onClick={handleFilter} aria-hidden="true">
       {data &&
         data.map((value) => {
-          return <Tag value={value} />;
+          return <Tag key={uuidv4()} value={value} />;
         })}
     </ul>
   );
