@@ -11,14 +11,13 @@ export interface IButton {
 }
 
 export interface ITag {
-  // id: string;
   value: string;
 }
 
 export interface ITagsState {
   isInputOpen: boolean;
   data: string[] | null;
-  tagArray: string[] | null;
+  filterTagArray: string[] | null;
 }
 
 export interface INote {
@@ -34,4 +33,8 @@ export interface INotesState {
 
 export interface ITextarea {
   note: INote | undefined;
+}
+
+export interface IFilterState {
+  data: string[] | null;
 }

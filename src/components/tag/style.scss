@@ -1,21 +1,23 @@
 @import '../../styles/constants.scss';
 
 .tag-list__item {
+  display: inline-block;
   position: relative;
-  text-align: center;
-  transition: background-color $transition-01 ease-out;
   cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
   &:hover {
-    background-color: $color-grey-05;
+    .input-checkbox ~ .input-checkbox_active {
+      background-color: $color-grey-05;
+    }
 
     .button {
       display: flex;
     }
-  }
-
-  &:active {
-    background-color: $color-grey-05;
   }
 
   .button {
@@ -27,11 +29,33 @@
     min-width: $base * 4;
     height: $base * 4;
     min-height: $base * 4;
-    border-radius: 50%;
   }
 
   .button__icon {
     width: $base * 3;
+    min-width: $base * 3;
     height: $base * 3;
+    min-height: $base * 3;
   }
+}
+
+.tag-list__item .input-checkbox {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.input-checkbox_active {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tag-list__item .input-checkbox:checked ~ .input-checkbox_active {
+  background-color: $color-grey-05;
 }

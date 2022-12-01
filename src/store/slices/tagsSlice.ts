@@ -6,7 +6,7 @@ import { ITagsState } from 'interfaces';
 const initialState: ITagsState = {
   isInputOpen: false,
   data: getLocalStorage('tags') || [],
-  tagArray: [],
+  filterTagArray: getLocalStorage('filterTagArray') || [],
 };
 
 export const tagsSlice = createSlice({
@@ -38,11 +38,6 @@ export const tagsSlice = createSlice({
         state.data = state.data.filter((value) => value !== action.payload);
       }
     },
-    filterByTag: (state, action: PayloadAction<string>) => {
-      if (state.data) {
-        state.data = state.data.filter((value) => value !== action.payload);
-      }
-    },
   },
 });
 
@@ -52,6 +47,5 @@ export const {
   addTagToFilter,
   addTagToFilterFromNote,
   removeTagFromFilter,
-  filterByTag,
 } = tagsSlice.actions;
 export default tagsSlice.reducer;

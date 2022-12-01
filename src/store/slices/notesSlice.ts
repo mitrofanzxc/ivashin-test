@@ -39,8 +39,14 @@ export const notesSlice = createSlice({
         }
       }
     },
+    filterNotes: (state, action: PayloadAction<INote[]>) => {
+      if (state.data) {
+        state.data = action.payload;
+      }
+    },
   },
 });
 
-export const { addNote, removeNote, addValueToNote, addTagToNote } = notesSlice.actions;
+export const { addNote, removeNote, addValueToNote, addTagToNote, filterNotes } =
+  notesSlice.actions;
 export default notesSlice.reducer;

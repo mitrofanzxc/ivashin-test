@@ -6,9 +6,15 @@ import {
   addTagToFilter,
   addTagToFilterFromNote,
   removeTagFromFilter,
-  filterByTag,
 } from './slices/tagsSlice';
-import { addNote, removeNote, addValueToNote, addTagToNote } from './slices/notesSlice';
+import {
+  addNote,
+  removeNote,
+  addValueToNote,
+  addTagToNote,
+  filterNotes,
+} from './slices/notesSlice';
+import { addTagToFilterTagArray, removeTagFromFilterTagArray } from './slices/filterSlice';
 
 export {
   store,
@@ -19,9 +25,11 @@ export {
   addTagToFilter,
   addTagToFilterFromNote,
   removeTagFromFilter,
-  filterByTag,
   addNote,
   removeNote,
   addValueToNote,
   addTagToNote,
+  filterNotes,
+  addTagToFilterTagArray,
+  removeTagFromFilterTagArray,
 };

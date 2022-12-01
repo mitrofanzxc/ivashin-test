@@ -12,14 +12,16 @@ const Tag: FC<ITag> = ({ value }) => {
   };
 
   return (
-    <li className="tag-list__item box-shadow pa-1">
+    <label className="tag-list__item box-shadow pa-1">
       {value}
+      <input className="input-checkbox" type="checkbox" value={value} />
       <button className="button box-shadow" type="button" onClick={handleRemoveTag}>
         <svg className="button__icon">
           <use xlinkHref={`${Sprite}#delete`} />
         </svg>
       </button>
-    </li>
+      <span className="input-checkbox_active" />
+    </label>
   );
 };
 

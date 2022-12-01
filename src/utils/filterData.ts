@@ -1,14 +1,16 @@
 import { INote } from 'interfaces';
 
-const filterData = (arr: string[], data: INote[]) => {
+const filterData = (arr: string[] | null, data: INote[]) => {
   const tempData: INote[] = [];
 
   for (let i = 0; i < data.length; i += 1) {
     const tags = Object.values(data[i].tags);
 
     for (let j = 0; j < tags.length; j += 1) {
-      if (arr.indexOf(tags[j]) !== -1) {
-        tempData.push(data[i]);
+      if (arr) {
+        if (arr.indexOf(tags[j]) !== -1) {
+          tempData.push(data[i]);
+        }
       }
     }
   }
