@@ -1,4 +1,4 @@
-import { FC, MouseEvent } from 'react';
+import { FC, useEffect, MouseEvent } from 'react';
 import {
   useAppDispatch,
   useAppSelector,
@@ -22,16 +22,15 @@ const TagList: FC = () => {
     const { checked, value } = target;
 
     if (target.type === 'checkbox') {
-      if (!checked) {
-        dispatch(removeTagFromFilterTagArray(value));
-      } else if (checked) {
+      if (checked) {
         dispatch(addTagToFilterTagArray(value));
+        const newData = filterData(filterTagArray, notesData);
+        dispatch(filterNotes(newData));
+      } else {
+        dispatch(removeTagFromFilterTagArray(value));
+        const newData = filterData(filterTagArray, notesData);
+        dispatch(filterNotes(newData));
       }
-
-      const asd = filterData(filterTagArray, notesData);
-      console.log(asd);
-
-      // dispatch(filterNotes(filterData(filterTagArray, notesData)));
     }
   };
 

@@ -1,15 +1,31 @@
-import { FC } from 'react';
-import { useAppDispatch, removeTagFromFilter } from 'store';
+import { FC, useEffect } from 'react';
+import {
+  useAppSelector,
+  useAppDispatch,
+  removeTagFromFilter,
+  removeTagFromFilterTagArray,
+  filterNotes,
+} from 'store';
+import { filterData } from 'utils';
 import { ITag } from 'interfaces';
 import Sprite from '../../assets/sprite.svg';
 import './style.scss';
 
 const Tag: FC<ITag> = ({ id, value }) => {
+  const { data: notesData } = useAppSelector(({ notes }) => notes);
+  const { data: filterTagArray } = useAppSelector(({ filter }) => filter);
   const dispatch = useAppDispatch();
 
   const handleRemoveTag = () => {
     dispatch(removeTagFromFilter(value));
+    dispatch(removeTagFromFilterTagArray(value));
+    const newData = filterData(filterTagArray, notesData);
+    dispatch(filterNotes(newData));
   };
+
+  useEffect(() => {
+    dispatch(filterNotes(filterData(filterTagArray, notesData)));
+  }, [filterTagArray]);
 
   return (
     <label className="tag-list__item box-shadow pa-1" htmlFor={id}>
