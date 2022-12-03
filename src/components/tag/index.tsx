@@ -24,7 +24,8 @@ const Tag: FC<ITag> = ({ id, value }) => {
   };
 
   useEffect(() => {
-    dispatch(filterNotes(filterData(filterTagArray, notesData)));
+    const newData = filterData(filterTagArray, notesData);
+    dispatch(filterNotes(newData));
   }, [filterTagArray]);
 
   return (

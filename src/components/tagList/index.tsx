@@ -25,17 +25,19 @@ const TagList: FC = () => {
       if (checked) {
         dispatch(addTagToFilterTagArray(value));
         const newData = filterData(filterTagArray, notesData);
+        console.log('newData', newData);
         dispatch(filterNotes(newData));
       } else {
         dispatch(removeTagFromFilterTagArray(value));
         const newData = filterData(filterTagArray, notesData);
+        console.log('newData', newData);
         dispatch(filterNotes(newData));
       }
     }
   };
 
   useSetLocalStorage('tags');
-  useSetLocalStorage('filter');
+  // useSetLocalStorage('filter');
 
   return (
     <ul className="tag-list" onClick={handleFilter} aria-hidden="true">

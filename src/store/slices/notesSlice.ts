@@ -5,6 +5,7 @@ import { INote, INotesState } from 'interfaces';
 
 const initialState: INotesState = {
   data: getLocalStorage('notes') || [],
+  currentData: getLocalStorage('currentNotes') || [],
 };
 
 export const notesSlice = createSlice({
@@ -40,8 +41,8 @@ export const notesSlice = createSlice({
       }
     },
     filterNotes: (state, action: PayloadAction<INote[]>) => {
-      if (state.data) {
-        state.data = action.payload;
+      if (state.currentData) {
+        state.currentData = action.payload;
       }
     },
   },

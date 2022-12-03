@@ -30,6 +30,7 @@ export interface INote {
 
 export interface INotesState {
   data: INote[];
+  currentData: INote[];
 }
 
 export interface ITextarea {
