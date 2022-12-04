@@ -1,12 +1,22 @@
-import { FC } from 'react';
+import { FC, MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from 'store';
+import { useAppSelector, useAppDispatch, openModal } from 'store';
 import { convertDate } from 'utils';
+import Sprite from '../../assets/sprite.svg';
 import './style.scss';
 
 const NotesList: FC = () => {
   const { data: notesData, currentData: currentNotesData } = useAppSelector(({ notes }) => notes);
   const { data: filterTagArray } = useAppSelector(({ filter }) => filter);
+  const dispatch = useAppDispatch();
+
+  const handleRemoveNote = (event: MouseEvent<HTMLButtonElement>) => {
+    // Для отмены перехода по роутеру, при клике на кнопку удаления заметки
+    event.preventDefault();
+
+    // dispatch(addDataToModal(value));
+    dispatch(openModal());
+  };
 
   return (
     <ul className="notes-list">
@@ -17,7 +27,7 @@ const NotesList: FC = () => {
           {filterTagArray.map((value, index) => {
             return (
               <span
-                key={`current-filter-tag-${value}-${index}`}
+                key={`selected-filter-tag-${value}-${index}`}
                 className="fw-medium"
               >{` ${value}`}</span>
             );
@@ -40,6 +50,15 @@ const NotesList: FC = () => {
             <Link key={id} className="notes-list__item box-shadow pa-2" to={`/${id}`}>
               <h3 className="h3">{value.length > 30 ? `${value.slice(0, 30)}...` : value}</h3>
               <h4 className="h4">{convertDate(time)}</h4>
+              <button
+                className="button box-shadow"
+                type="button"
+                onClick={(event) => handleRemoveNote(event)}
+              >
+                <svg className="button__icon">
+                  <use xlinkHref={`${Sprite}#delete`} />
+                </svg>
+              </button>
             </Link>
           );
         })}
@@ -53,6 +72,15 @@ const NotesList: FC = () => {
             <Link key={id} className="notes-list__item box-shadow pa-2" to={`/${id}`}>
               <h3 className="h3">{value.length > 30 ? `${value.slice(0, 30)}...` : value}</h3>
               <h4 className="h4">{convertDate(time)}</h4>
+              <button
+                className="button box-shadow"
+                type="button"
+                onClick={(event) => handleRemoveNote(event)}
+              >
+                <svg className="button__icon">
+                  <use xlinkHref={`${Sprite}#delete`} />
+                </svg>
+              </button>
             </Link>
           );
         })}

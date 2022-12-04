@@ -64,7 +64,7 @@ const Modal: FC = () => {
         onClick={handleCloseModal}
         role="button"
         aria-label="Shadow area to close the modal window"
-        tabIndex="-1"
+        tabIndex={-1}
       />
     </>
   );

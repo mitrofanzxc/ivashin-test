@@ -8,6 +8,7 @@
 }
 
 .notes-list__item {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: $base;
@@ -18,4 +19,28 @@
   -webkit-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
+
+  &:hover {
+    .button {
+      display: flex;
+    }
+  }
+
+  .button {
+    position: absolute;
+    top: -$base;
+    right: -$base;
+    display: none;
+    width: $base * 5;
+    min-width: $base * 5;
+    height: $base * 5;
+    min-height: $base * 5;
+  }
+
+  .button__icon {
+    width: $base * 4;
+    min-width: $base * 4;
+    height: $base * 4;
+    min-height: $base * 4;
+  }
 }
