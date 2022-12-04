@@ -15,7 +15,12 @@ const NotesList: FC = () => {
         <h4 className="h4">
           Filtering by:
           {filterTagArray.map((value, index) => {
-            return <span key={`tag-${value}-${index}`} className="fw-medium">{` ${value}`}</span>;
+            return (
+              <span
+                key={`current-filter-tag-${value}-${index}`}
+                className="fw-medium"
+              >{` ${value}`}</span>
+            );
           })}
         </h4>
       )}

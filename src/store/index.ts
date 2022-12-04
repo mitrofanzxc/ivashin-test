@@ -15,6 +15,7 @@ import {
   filterNotes,
 } from './slices/notesSlice';
 import { addTagToFilterTagArray, removeTagFromFilterTagArray } from './slices/filterSlice';
+import { openModal, closeModal } from './slices/modalSlice';
 
 export {
   store,
@@ -32,4 +33,6 @@ export {
   filterNotes,
   addTagToFilterTagArray,
   removeTagFromFilterTagArray,
+  openModal,
+  closeModal,
 };

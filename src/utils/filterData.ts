@@ -15,7 +15,7 @@ const filterData = (arr: string[] | null, data: INote[]) => {
     }
   }
 
-  // Because there are duplicates, only unique elements must be left.
+  // Есть возможность получения дубликатов, поэтому от них нужно избавиться
   return tempData.reduce((accumulator: INote[], currentValue: INote) => {
     if (accumulator.every((item) => item.id !== currentValue.id)) {
       accumulator.push(currentValue);

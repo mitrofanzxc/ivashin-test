@@ -5,7 +5,9 @@ export interface IPATHS {
 }
 
 export interface IButton {
-  icon: string;
+  icon?: string;
+  textContent?: string;
+  className?: string;
   isInputOpen?: boolean;
   onClick?: () => void;
 }
@@ -39,4 +41,8 @@ export interface ITextarea {
 
 export interface IFilterState {
   data: string[] | null;
+}
+
+export interface IModalState {
+  isModalOpen: boolean;
 }

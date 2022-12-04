@@ -3,8 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAppSelector, useAppDispatch, addTagToFilterFromNote } from 'store';
 import { useSetLocalStorage } from 'hooks';
 import { convertDate } from 'utils';
-import { v4 as uuidv4 } from 'uuid';
-import { Textarea } from 'components';
+import { Textarea, Button } from 'components';
 import { PATHS } from '../../constants';
 import Sprite from '../../assets/sprite.svg';
 import './style.scss';
@@ -41,15 +40,16 @@ const NotePage: FC = () => {
           </svg>
         </Link>
         <h4 className="h4">{note && note.time && convertDate(note.time)}</h4>
+        <Button icon="save" onClick={handleAddTagToFilterFromNote} />
       </div>
       <Textarea note={note} />
       <ul className="tag-list mr-1">
         {note &&
           note.tags &&
-          note.tags.map((tag) => {
+          note.tags.map((value, index) => {
             return (
-              <li key={uuidv4()} className="tag-list__item box-shadow pa-1">
-                {tag}
+              <li key={`note-tag-${value}-${index}`} className="tag-list__item box-shadow pa-1">
+                {value}
               </li>
             );
           })}

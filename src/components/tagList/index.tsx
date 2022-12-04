@@ -1,4 +1,4 @@
-import { FC, useEffect, MouseEvent } from 'react';
+import { FC, MouseEvent } from 'react';
 import {
   useAppDispatch,
   useAppSelector,
@@ -25,12 +25,10 @@ const TagList: FC = () => {
       if (checked) {
         dispatch(addTagToFilterTagArray(value));
         const newData = filterData(filterTagArray, notesData);
-        console.log('newData', newData);
         dispatch(filterNotes(newData));
       } else {
         dispatch(removeTagFromFilterTagArray(value));
         const newData = filterData(filterTagArray, notesData);
-        console.log('newData', newData);
         dispatch(filterNotes(newData));
       }
     }
@@ -45,8 +43,8 @@ const TagList: FC = () => {
         tagsData.map((value, index) => {
           return (
             <Tag
-              key={`checkbox-${value}-${index}`}
-              id={`checkbox-${value}-${index}`}
+              key={`filter-tag-${value}-${index}`}
+              id={`filter-tag-${value}-${index}`}
               value={value}
             />
           );

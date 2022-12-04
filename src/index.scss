@@ -13,8 +13,16 @@ body {
   scroll-behavior: smooth;
 }
 
+.body_overflow {
+  overflow-y: hidden;
+}
+
+.display_none {
+  display: none;
+}
+
 .wrapper {
-  max-width: 98%;
+  max-width: $base * 256;
   margin-right: auto;
   margin-left: auto;
 }
@@ -31,4 +39,26 @@ body {
 
 .box-shadow {
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.shadow {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-white-06;
+}
+
+.w-100 {
+  width: $base * 25;
+}
+
+.bg-red {
+  background-color: $color-red;
+}
+
+.bg-green {
+  background-color: $color-green;
 }

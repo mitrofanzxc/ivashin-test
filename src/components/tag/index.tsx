@@ -5,6 +5,7 @@ import {
   removeTagFromFilter,
   removeTagFromFilterTagArray,
   filterNotes,
+  openModal,
 } from 'store';
 import { filterData } from 'utils';
 import { ITag } from 'interfaces';
@@ -17,10 +18,11 @@ const Tag: FC<ITag> = ({ id, value }) => {
   const dispatch = useAppDispatch();
 
   const handleRemoveTag = () => {
-    dispatch(removeTagFromFilter(value));
-    dispatch(removeTagFromFilterTagArray(value));
-    const newData = filterData(filterTagArray, notesData);
-    dispatch(filterNotes(newData));
+    dispatch(openModal());
+    // dispatch(removeTagFromFilter(value));
+    // dispatch(removeTagFromFilterTagArray(value));
+    // const newData = filterData(filterTagArray, notesData);
+    // dispatch(filterNotes(newData));
   };
 
   useEffect(() => {

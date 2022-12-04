@@ -11,11 +11,13 @@ export const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
+    // Добавить тег в массив для фильтрации
     addTagToFilterTagArray: (state, action: PayloadAction<string>) => {
       if (state.data) {
         state.data.push(action.payload);
       }
     },
+    // Удалить тег из массива для фильтрации
     removeTagFromFilterTagArray: (state, action: PayloadAction<string>) => {
       if (state.data) {
         state.data = state.data.filter((value) => value !== action.payload);
