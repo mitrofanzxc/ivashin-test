@@ -1,6 +1,7 @@
 import { FC, MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { useAppSelector, useAppDispatch, addDataToModal, openModal } from 'store';
+import { useSetLocalStorage } from 'hooks';
 import { convertDate } from 'utils';
 import Sprite from '../../assets/sprite.svg';
 import './style.scss';
@@ -17,6 +18,8 @@ const NotesList: FC = () => {
     dispatch(addDataToModal({ type: 'note', value: id }));
     dispatch(openModal());
   };
+
+  useSetLocalStorage('notes');
 
   return (
     <ul className="notes-list">

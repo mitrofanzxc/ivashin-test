@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { getLocalStorage } from 'utils';
-import { INote, INotesState, IModalData } from 'interfaces';
+import { INote, INotesState } from 'interfaces';
 
 const initialState: INotesState = {
   data: getLocalStorage('notes') || [],
@@ -19,9 +19,9 @@ export const notesSlice = createSlice({
       }
     },
     // Удалить заметку из базы данных
-    removeNote: (state, action: PayloadAction<IModalData>) => {
+    removeNote: (state, action: PayloadAction<string>) => {
       if (state.data) {
-        state.data = state.data.filter(({ id }) => id !== action.payload.value);
+        state.data = state.data.filter(({ id }) => id !== action.payload);
       }
     },
     // Добавить/Обновить содержание заметки
@@ -51,9 +51,9 @@ export const notesSlice = createSlice({
       }
     },
     // Удалить заметку из массива отфильтрованных заметок
-    removeNoteFromFilterNotes: (state, action: PayloadAction<IModalData>) => {
+    removeNoteFromFilterNotes: (state, action: PayloadAction<string>) => {
       if (state.currentData) {
-        state.currentData = state.currentData.filter(({ id }) => id !== action.payload.value);
+        state.currentData = state.currentData.filter(({ id }) => id !== action.payload);
       }
     },
   },
