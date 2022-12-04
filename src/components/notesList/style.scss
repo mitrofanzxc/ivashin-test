@@ -31,16 +31,16 @@
     top: -$base;
     right: -$base;
     display: none;
-    width: $base * 5;
-    min-width: $base * 5;
-    height: $base * 5;
-    min-height: $base * 5;
-  }
-
-  .button__icon {
     width: $base * 4;
     min-width: $base * 4;
     height: $base * 4;
     min-height: $base * 4;
+  }
+
+  .button__icon {
+    width: $base * 3;
+    min-width: $base * 3;
+    height: $base * 3;
+    min-height: $base * 3;
   }
 }

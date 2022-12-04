@@ -23,6 +23,7 @@ body {
 
 .wrapper {
   max-width: $base * 256;
+  width: calc(100vw - ($base * 4));
   margin-right: auto;
   margin-left: auto;
 }

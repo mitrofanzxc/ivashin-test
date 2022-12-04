@@ -11,7 +11,7 @@ const Tag: FC<ITag> = ({ id, value }) => {
   const dispatch = useAppDispatch();
 
   const handleRemoveTag = () => {
-    dispatch(addDataToModal(value));
+    dispatch(addDataToModal({ type: 'tag', value }));
     dispatch(openModal());
   };
 

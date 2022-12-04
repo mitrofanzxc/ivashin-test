@@ -43,7 +43,12 @@ export interface IFilterState {
   data: string[] | null;
 }
 
+export interface IModalData {
+  type: string;
+  value: string;
+}
+
 export interface IModalState {
   isModalOpen: boolean;
-  data: string;
+  data: IModalData;
 }

@@ -1,10 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { IModalState } from 'interfaces';
+import { IModalData, IModalState } from 'interfaces';
 
 const initialState: IModalState = {
   isModalOpen: false,
-  data: '',
+  data: {
+    type: '',
+    value: '',
+  },
 };
 
 export const modalSlice = createSlice({
@@ -20,7 +23,7 @@ export const modalSlice = createSlice({
       state.isModalOpen = false;
     },
     // Получение данных в модальное окно
-    addDataToModal: (state, action: PayloadAction<string>) => {
+    addDataToModal: (state, action: PayloadAction<IModalData>) => {
       state.data = action.payload;
     },
   },

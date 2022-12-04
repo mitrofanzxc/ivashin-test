@@ -6,6 +6,8 @@ import {
   removeTagFromFilter,
   removeTagFromFilterTagArray,
   filterNotes,
+  removeNote,
+  removeNoteFromFilterNotes,
 } from 'store';
 import { useBodyOverflow } from 'hooks';
 import { filterData } from 'utils';
@@ -23,18 +25,40 @@ const Modal: FC = () => {
   };
 
   const handleSubmit = (value: string) => {
-    switch (value) {
-      case 'Yes':
-        dispatch(removeTagFromFilter(modalData));
-        dispatch(removeTagFromFilterTagArray(modalData));
-        dispatch(filterNotes(filterData(filterTagArray, notesData)));
-        handleCloseModal();
+    switch (modalData.type) {
+      case 'tag':
+        switch (value) {
+          case 'Yes':
+            dispatch(removeTagFromFilter(modalData.value));
+            dispatch(removeTagFromFilterTagArray(modalData.value));
+            dispatch(filterNotes(filterData(filterTagArray, notesData)));
+            handleCloseModal();
+            break;
+          case 'No':
+            handleCloseModal();
+            break;
+          default:
+            handleCloseModal();
+            break;
+        }
         break;
-      case 'No':
-        handleCloseModal();
+      case 'note':
+        switch (value) {
+          case 'Yes':
+            dispatch(removeNote(modalData.value));
+            dispatch(removeNoteFromFilterNotes(modalData.value));
+            dispatch(filterNotes(filterData(filterTagArray, notesData)));
+            handleCloseModal();
+            break;
+          case 'No':
+            handleCloseModal();
+            break;
+          default:
+            handleCloseModal();
+            break;
+        }
         break;
       default:
-        handleCloseModal();
         break;
     }
   };

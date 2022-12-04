@@ -1,6 +1,6 @@
 import { FC, MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
-import { useAppSelector, useAppDispatch, openModal } from 'store';
+import { useAppSelector, useAppDispatch, addDataToModal, openModal } from 'store';
 import { convertDate } from 'utils';
 import Sprite from '../../assets/sprite.svg';
 import './style.scss';
@@ -10,11 +10,11 @@ const NotesList: FC = () => {
   const { data: filterTagArray } = useAppSelector(({ filter }) => filter);
   const dispatch = useAppDispatch();
 
-  const handleRemoveNote = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleRemoveNote = (event: MouseEvent<HTMLButtonElement>, id: string) => {
     // Для отмены перехода по роутеру, при клике на кнопку удаления заметки
     event.preventDefault();
 
-    // dispatch(addDataToModal(value));
+    dispatch(addDataToModal({ type: 'note', value: id }));
     dispatch(openModal());
   };
 
@@ -53,7 +53,7 @@ const NotesList: FC = () => {
               <button
                 className="button box-shadow"
                 type="button"
-                onClick={(event) => handleRemoveNote(event)}
+                onClick={(event) => handleRemoveNote(event, id)}
               >
                 <svg className="button__icon">
                   <use xlinkHref={`${Sprite}#delete`} />
@@ -75,7 +75,7 @@ const NotesList: FC = () => {
               <button
                 className="button box-shadow"
                 type="button"
-                onClick={(event) => handleRemoveNote(event)}
+                onClick={(event) => handleRemoveNote(event, id)}
               >
                 <svg className="button__icon">
                   <use xlinkHref={`${Sprite}#delete`} />
