@@ -1,12 +1,5 @@
 import { FC, useEffect } from 'react';
-import {
-  useAppSelector,
-  useAppDispatch,
-  removeTagFromFilter,
-  removeTagFromFilterTagArray,
-  filterNotes,
-  openModal,
-} from 'store';
+import { useAppSelector, useAppDispatch, filterNotes, openModal, addDataToModal } from 'store';
 import { filterData } from 'utils';
 import { ITag } from 'interfaces';
 import Sprite from '../../assets/sprite.svg';
@@ -18,16 +11,14 @@ const Tag: FC<ITag> = ({ id, value }) => {
   const dispatch = useAppDispatch();
 
   const handleRemoveTag = () => {
+    dispatch(addDataToModal(value));
     dispatch(openModal());
-    // dispatch(removeTagFromFilter(value));
-    // dispatch(removeTagFromFilterTagArray(value));
-    // const newData = filterData(filterTagArray, notesData);
-    // dispatch(filterNotes(newData));
   };
 
   useEffect(() => {
     const newData = filterData(filterTagArray, notesData);
     dispatch(filterNotes(newData));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filterTagArray]);
 
   return (

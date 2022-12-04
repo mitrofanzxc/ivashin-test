@@ -45,4 +45,5 @@ export interface IFilterState {
 
 export interface IModalState {
   isModalOpen: boolean;
+  data: string;
 }

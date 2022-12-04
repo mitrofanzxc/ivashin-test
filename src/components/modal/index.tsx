@@ -1,10 +1,21 @@
 import { FC } from 'react';
-import { useAppSelector, useAppDispatch, closeModal } from 'store';
+import {
+  useAppSelector,
+  useAppDispatch,
+  closeModal,
+  removeTagFromFilter,
+  removeTagFromFilterTagArray,
+  filterNotes,
+} from 'store';
+import { useBodyOverflow } from 'hooks';
+import { filterData } from 'utils';
 import { Button } from 'components';
 import './style.scss';
 
 const Modal: FC = () => {
-  const { isModalOpen } = useAppSelector(({ modal }) => modal);
+  const { isModalOpen, data: modalData } = useAppSelector(({ modal }) => modal);
+  const { data: notesData } = useAppSelector(({ notes }) => notes);
+  const { data: filterTagArray } = useAppSelector(({ filter }) => filter);
   const dispatch = useAppDispatch();
 
   const handleCloseModal = () => {
@@ -14,6 +25,9 @@ const Modal: FC = () => {
   const handleSubmit = (value: string) => {
     switch (value) {
       case 'Yes':
+        dispatch(removeTagFromFilter(modalData));
+        dispatch(removeTagFromFilterTagArray(modalData));
+        dispatch(filterNotes(filterData(filterTagArray, notesData)));
         handleCloseModal();
         break;
       case 'No':
@@ -24,6 +38,8 @@ const Modal: FC = () => {
         break;
     }
   };
+
+  useBodyOverflow();
 
   return (
     <>
@@ -43,7 +59,13 @@ const Modal: FC = () => {
         </div>
         <Button icon="close" onClick={handleCloseModal} />
       </div>
-      <div className={`shadow ${!isModalOpen ? 'display_none' : ''}`} onClick={handleCloseModal} />
+      <div
+        className={`shadow ${!isModalOpen ? 'display_none' : ''}`}
+        onClick={handleCloseModal}
+        role="button"
+        aria-label="Shadow area to close the modal window"
+        tabIndex="-1"
+      />
     </>
   );
 };
