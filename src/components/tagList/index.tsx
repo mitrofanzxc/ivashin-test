@@ -35,7 +35,6 @@ const TagList: FC = () => {
   };
 
   useSetLocalStorage('tags');
-  // useSetLocalStorage('filter');
 
   return (
     <ul className="tag-list" onClick={handleFilter} aria-hidden="true">
