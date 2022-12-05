@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "assets": ["src/assets/"],
+      "components": ["src/components/"],
+      "constants": ["src/constants/"],
+      "pages": ["src/pages/"],
+      "store": ["src/store/"],
+      "styles": ["src/styles/"],
+      "utils": ["src/utils/"],
+      "interfaces": ["src/interfaces/"],
+      "hooks": ["src/hooks/"]
+    },
+    "allowJs": true,
+    "target": "es2021",
+    "jsx": "react-jsx",
+    "useDefineForClassFields": true,
+    "module": "es6",
+    "rootDir": ".",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": false,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true
+  }
+}

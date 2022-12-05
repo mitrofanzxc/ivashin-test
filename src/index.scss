@@ -1,0 +1,69 @@
+@import './styles/constants.scss';
+@import './styles/normalize.scss';
+@import './styles/reset.scss';
+@import './styles/indents.scss';
+@import './styles/headers.scss';
+@import './styles/flex.scss';
+
+body {
+  @include roboto;
+  @include scrollbar;
+  background-color: $color-white;
+  color: $color-dark;
+  scroll-behavior: smooth;
+}
+
+.body_overflow {
+  overflow-y: hidden;
+}
+
+.display_none {
+  display: none;
+}
+
+.wrapper {
+  max-width: $base * 256;
+  width: calc(100vw - ($base * 4));
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: $base * 2;
+
+  @media (max-width: $breakpoint-md-min) {
+    grid-template-columns: 1.5fr 3fr;
+  }
+}
+
+.box-shadow {
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.shadow {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-white-06;
+}
+
+.w-100 {
+  width: $base * 25;
+}
+
+.bg-red {
+  background-color: $color-red;
+}
+
+.bg-green {
+  background-color: $color-green;
+}
+
+.color-red {
+  color: $color-red;
+}

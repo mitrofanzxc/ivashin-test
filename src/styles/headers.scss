@@ -1,0 +1,77 @@
+@import './constants.scss';
+
+.h1 {
+  font-size: $fs-xxxl;
+  font-weight: $fw-bold;
+
+  @media (max-width: $breakpoint-md-min) {
+    font-size: $fs-xxl;
+  }
+}
+
+.h2 {
+  font-size: $fs-xxl;
+  font-weight: $fw-bold;
+
+  @media (max-width: $breakpoint-md-min) {
+    font-size: $fs-xl;
+  }
+}
+
+.h3 {
+  font-size: $fs-xl;
+  font-weight: $fw-medium;
+
+  @media (max-width: $breakpoint-md-min) {
+    font-size: $fs-l;
+  }
+}
+
+.h4 {
+  font-size: $fs-l;
+  color: $color-dark-04;
+
+  @media (max-width: $breakpoint-md-min) {
+    font-size: $fs-m;
+  }
+}
+
+.fs-xs {
+  font-size: $fs-xs;
+}
+
+.fs-s {
+  font-size: $fs-s;
+}
+
+.fs-m {
+  font-size: $fs-m;
+}
+
+.fs-l {
+  font-size: $fs-l;
+}
+
+.fs-xl {
+  font-size: $fs-xl;
+}
+
+.fs-xxl {
+  font-size: $fs-xxl;
+}
+
+.fs-xxxl {
+  font-size: $fs-xxxl;
+}
+
+.fw-regular {
+  font-weight: $fw-regular;
+}
+
+.fw-medium {
+  font-weight: $fw-medium;
+}
+
+.fw-bold {
+  font-weight: $fw-bold;
+}

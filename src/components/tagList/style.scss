@@ -1,0 +1,7 @@
+@import '../../styles/constants.scss';
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $base * 4;
+}

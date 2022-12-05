@@ -1,0 +1,24 @@
+@import '../../styles/constants.scss';
+
+.filter__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  column-gap: $base * 2;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 0px 0px;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  border-radius: $base;
+}
+
+.input-wrapper {
+  display: none;
+  gap: $base * 2;
+}
+
+.input-wrapper_active {
+  display: flex;
+}
