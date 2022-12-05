@@ -28,7 +28,7 @@
 
   .button {
     position: absolute;
-    top: -$base;
+    top: -$base * 2;
     right: -$base;
     display: none;
     width: $base * 4;
