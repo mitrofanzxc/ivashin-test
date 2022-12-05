@@ -11,12 +11,26 @@ const NotesList: FC = () => {
   const { data: filterTagArray } = useAppSelector(({ filter }) => filter);
   const dispatch = useAppDispatch();
 
+  // Удаление заметки
   const handleRemoveNote = (event: MouseEvent<HTMLButtonElement>, id: string) => {
     // Для отмены перехода по роутеру, при клике на кнопку удаления заметки
     event.preventDefault();
 
     dispatch(addDataToModal({ type: 'note', value: id }));
     dispatch(openModal());
+  };
+
+  // Обработчик для заголовков заметок
+  const handleNoteHeader = (value: string) => {
+    if (value.length > 30) {
+      return `${value.slice(0, 30)}...`;
+    }
+
+    if (!value.length) {
+      return 'Empty note';
+    }
+
+    return value;
   };
 
   useSetLocalStorage('notes');
@@ -51,7 +65,7 @@ const NotesList: FC = () => {
         notesData.map(({ id, time, value }) => {
           return (
             <Link key={id} className="notes-list__item box-shadow pa-2" to={`/${id}`}>
-              <h3 className="h3">{value.length > 30 ? `${value.slice(0, 30)}...` : value}</h3>
+              <h3 className="h3">{handleNoteHeader(value)}</h3>
               <h4 className="h4">{convertDate(time)}</h4>
               <button
                 className="button box-shadow"
@@ -73,7 +87,7 @@ const NotesList: FC = () => {
         currentNotesData.map(({ id, time, value }) => {
           return (
             <Link key={id} className="notes-list__item box-shadow pa-2" to={`/${id}`}>
-              <h3 className="h3">{value.length > 30 ? `${value.slice(0, 30)}...` : value}</h3>
+              <h3 className="h3">{handleNoteHeader(value)}</h3>
               <h4 className="h4">{convertDate(time)}</h4>
               <button
                 className="button box-shadow"

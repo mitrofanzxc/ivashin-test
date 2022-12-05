@@ -16,6 +16,7 @@ export const notesSlice = createSlice({
     addNote: (state, action: PayloadAction<INote>) => {
       if (state.data) {
         state.data.push(action.payload);
+        state.data = state.data.sort((a, b) => +new Date(b.time) - +new Date(a.time));
       }
     },
     // Удалить заметку из базы данных
@@ -34,6 +35,17 @@ export const notesSlice = createSlice({
         }
       }
     },
+    // Обновить время заметки, если произошли изменения
+    addDateToNote: (state, action: PayloadAction<{ id: string; value: string }>) => {
+      if (state.data) {
+        const note = state.data.find(({ id }) => id === action.payload.id);
+
+        if (note) {
+          note.time = action.payload.value;
+          state.data = state.data.sort((a, b) => +new Date(b.time) - +new Date(a.time));
+        }
+      }
+    },
     // Добавить тег к заметке
     addTagToNote: (state, action: PayloadAction<{ id: string; tags: string[] }>) => {
       if (state.data) {
@@ -47,7 +59,7 @@ export const notesSlice = createSlice({
     // Обновить массив для отфильтрованных заметок
     filterNotes: (state, action: PayloadAction<INote[]>) => {
       if (state.currentData) {
-        state.currentData = action.payload;
+        state.currentData = action.payload.sort((a, b) => +new Date(b.time) - +new Date(a.time));
       }
     },
     // Удалить заметку из массива отфильтрованных заметок
@@ -63,6 +75,7 @@ export const {
   addNote,
   removeNote,
   addValueToNote,
+  addDateToNote,
   addTagToNote,
   filterNotes,
   removeNoteFromFilterNotes,

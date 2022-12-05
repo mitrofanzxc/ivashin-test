@@ -68,7 +68,7 @@ const Modal: FC = () => {
   return (
     <>
       <div className={`modal box-shadow ${!isModalOpen ? 'display_none' : ''}`}>
-        <h2 className="h2">Are you sure you want to delete this?</h2>
+        <h2 className="h2">{`Are you sure you want to delete this ${modalData.type}?`}</h2>
         <div className="display_flex ai-center jc-center gap-2">
           <Button
             textContent="Yes"

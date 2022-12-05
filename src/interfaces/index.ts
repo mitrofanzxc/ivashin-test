@@ -37,6 +37,8 @@ export interface INotesState {
 
 export interface ITextarea {
   note: INote | undefined;
+  handleInitialTextareaValue: (value: string) => void;
+  handleCurrentTextareaValue: (value: string) => void;
 }
 
 export interface IFilterState {

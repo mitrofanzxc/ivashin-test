@@ -6,11 +6,16 @@ import { ITextarea } from 'interfaces';
 import { regex } from '../../constants';
 import './style.scss';
 
-const Textarea: FC<ITextarea> = ({ note }) => {
+const Textarea: FC<ITextarea> = ({
+  note,
+  handleInitialTextareaValue,
+  handleCurrentTextareaValue,
+}) => {
   const highlights = useRef<HTMLDivElement>(null);
   const textarea = useRef<HTMLTextAreaElement>(null);
   const dispatch = useAppDispatch();
 
+  // Обработчик для динамического добавления тега к заметке
   const validateTag = (value: string, condition: RegExp) => {
     const tags = value.match(condition);
 
@@ -21,6 +26,7 @@ const Textarea: FC<ITextarea> = ({ note }) => {
     }
   };
 
+  // Обработчик для подсвечивания совпадений
   const handleApplyHighlights = (value: string) => {
     const highlightedText = applyHighlights(value, regex);
 
@@ -29,19 +35,24 @@ const Textarea: FC<ITextarea> = ({ note }) => {
     }
   };
 
+  // Обработчик для textarea
   const handleTextarea = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const target = event.target as HTMLTextAreaElement;
     const { value } = target;
     validateTag(value, regex);
     handleApplyHighlights(value);
+    handleCurrentTextareaValue(value);
 
     if (note) {
       dispatch(addValueToNote({ id: note.id, value }));
     }
   };
 
+  // При первой загрузке - подсветить все совпадения и установить начальное значение
   useEffect(() => {
     if (textarea.current) {
+      handleInitialTextareaValue(textarea.current.value);
+      handleCurrentTextareaValue(textarea.current.value);
       handleApplyHighlights(textarea.current.value);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

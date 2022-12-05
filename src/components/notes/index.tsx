@@ -12,6 +12,7 @@ const Notes: FC = () => {
   const noteId = uuidv4();
   const noteTime = new Date().toISOString();
 
+  // Добавление заметки в БД с начальной информацией
   const handleAddNote = (id: string, time: string) => {
     const note = { id, time, tags: [], value: '' };
     dispatch(addNote(note));
