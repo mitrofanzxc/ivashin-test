@@ -10,14 +10,14 @@ Run the app in the development mode.
 
 ## Requirements of the project: 
 
-- [x] Разработать одностраничное приложение на React: текстовый редактор заметок с тегами. 
-- [x] Создание, редактирование, просмотр и удаление заметок; 
-- [x] Фильтр заметок по тегу; 
-- [x] Добавление и удаление тегов из списка; 
-- [x] Данные хранить в json формате; 
-- [x] Использование CSS препроцессора; 
-- [x] Использование TypeScript; 
-- [x] Во время редактирования заметки пользователь может создавать теги, используя символ #; 
-- [x] При редактировании заметки все слова, соответствующие тегам, должны подсвечиваться; 
-- [x] Залить на гит; 
-- [x] Залить на netlify 
+- [x] Create a single page application with React: text editor with tags; 
+- [x] Create, edit, view and delete notes; 
+- [x] Filter notes by tag; 
+- [x] Adding and removing tags from the list; 
+- [x] Store data in JSON format; 
+- [x] Using the CSS Preprocessor; 
+- [x] Using TypeScript; 
+- [x] While editing a note, the user can create tags using the # symbol; 
+- [x] When editing a note, all words matching the tags should be highlighted; 
+- [x] Push the App to GitHub; 
+- [x] Deploy on Netlify; 
