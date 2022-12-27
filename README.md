@@ -1,4 +1,4 @@
-# Deploy: [Link](https://mitrofanzxc-ivashin-test.netlify.app/) 
+# Deploy: [Link](https://mitrofanzxc-notepad.netlify.app/) 
 
 ### `yarn` 
 
